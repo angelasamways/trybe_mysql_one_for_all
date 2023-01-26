@@ -2,7 +2,7 @@
   "tabela_usuario": "tabela_usuario",
   "coluna_usuario": "nome_usuario",
   "tabela_plano": "tabela_plano",
-  "coluna_plano": "nome-do-plano",
+  "coluna_plano": "nome_plano",
   "tabela_historico_de_reproducoes": "tabela_historico_de_reproducoes",
   "coluna_historico_de_reproducoes": "data_reproducao",
   "tabela_seguindo_artistas": "tabela_seguindo_artistas",

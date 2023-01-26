@@ -5,7 +5,7 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 CREATE TABLE SpotifyClone.tabela_plano(
       plano_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
       nome_plano VARCHAR(30) NOT NULL,
-      valor_plano DOBLE NOT NULL
+      valor_plano DOUBLE NOT NULL
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.tabela_usuario(
@@ -24,7 +24,7 @@ CREATE TABLE SpotifyClone.tabela_plano(
 
    CREATE TABLE SpotifyClone.tabela_seguindo_artistas(
       artista_id INT UNSIGNED NOT NULL,
-      usuario_id INTUNSIGNED NOT NULL,
+      usuario_id INT UNSIGNED NOT NULL,
       CONSTRAINT PRIMARY KEY(artista_id, usuario_id),
       FOREIGN KEY(artista_id) REFERENCES tabela_artista(artista_id),
       FOREIGN KEY(usuario_id) REFERENCES tabela_usuario(usuario_id)
@@ -123,14 +123,14 @@ CREATE TABLE SpotifyClone.tabela_plano(
     SpotifyClone.tabela_cancoes (nome_cancao, artista_id, album_id, duracao_segundos)
   VALUES
     ('BREAK MY SOUL', 1, 1, 279),
-    ('VIRGO’S GROOVE', 1, 1, 369),
+    ('VIRGOS GROOVE', 1, 1, 369),
     ('ALIEN SUPERSTAR', 1, 1, 116),
-    ('Don’t Stop Me Now', 2, 2, 203),
+    ('Dont Stop Me Now', 2, 2, 203),
     ('Under Pressure', 2, 3, 152),
     ('Como Nossos Pais', 3, 4, 105),
     ('O Medo de Amar é o Medo de Ser Livre', 3, 5, 207),
     ('Samba em Paris', 4, 6, 267),
-    ('The Bard’s Song', 5, 7, 244),
+    ('The Bards Song', 5, 7, 244),
     ('Feeling Good',6, 8, 100);
 
   INSERT INTO
