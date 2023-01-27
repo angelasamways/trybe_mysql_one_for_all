@@ -3,54 +3,54 @@ DROP DATABASE IF EXISTS SpotifyClone;
 CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 CREATE TABLE SpotifyClone.tabela_plano(
-      plano_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      plano_id INT AUTO_INCREMENT PRIMARY KEY,
       nome_plano VARCHAR(30) NOT NULL,
       valor_plano DOUBLE NOT NULL
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.tabela_usuario(
-      usuario_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      usuario_id INT AUTO_INCREMENT PRIMARY KEY,
       nome_usuario VARCHAR(130) NOT NULL,
-      idade INT UNSIGNED NOT NULL,
-      plano_id INT UNSIGNED NOT NULL,
+      idade INT NOT NULL,
+      plano_id INT NOT NULL,
       data_assinatura_do_plano DATE NOT NULL,
       FOREIGN KEY(plano_id) REFERENCES tabela_plano(plano_id)
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.tabela_artista(
-      artista_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      artista_id INT AUTO_INCREMENT PRIMARY KEY,
       nome_artista VARCHAR(50) NOT NULL
   ) engine = InnoDB;
 
    CREATE TABLE SpotifyClone.tabela_seguindo_artistas(
-      artista_id INT UNSIGNED NOT NULL,
-      usuario_id INT UNSIGNED NOT NULL,
+      artista_id INT NOT NULL,
+      usuario_id INT NOT NULL,
       CONSTRAINT PRIMARY KEY(artista_id, usuario_id),
       FOREIGN KEY(artista_id) REFERENCES tabela_artista(artista_id),
       FOREIGN KEY(usuario_id) REFERENCES tabela_usuario(usuario_id)
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.tabela_album(
-      album_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      album_id INT AUTO_INCREMENT PRIMARY KEY,
       nome_album VARCHAR(50) NOT NULL,
-      artista_id INT UNSIGNED NOT NULL,
+      artista_id INT NOT NULL,
       ano_lancamento YEAR NOT NULL,
       FOREIGN KEY(artista_id) REFERENCES tabela_artista(artista_id)
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.tabela_cancoes(
-      cancao_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+      cancao_id INT AUTO_INCREMENT PRIMARY KEY,
       nome_cancao VARCHAR(50) NOT NULL,
-      artista_id INT UNSIGNED NOT NULL,
-      album_id INT UNSIGNED NOT NULL,
-      duracao_segundos INT UNSIGNED NOT NULL,
+      artista_id INT NOT NULL,
+      album_id INT NOT NULL,
+      duracao_segundos INT NOT NULL,
       FOREIGN KEY(artista_id) REFERENCES tabela_artista(artista_id),
       FOREIGN KEY(album_id) REFERENCES tabela_album(album_id)
   ) engine = InnoDB;
 
   CREATE TABLE SpotifyClone.tabela_historico_de_reproducoes(
-      usuario_id INT UNSIGNED NOT NULL,
-      cancao_id INT UNSIGNED NOT NULL,
+      usuario_id INT NOT NULL,
+      cancao_id INT NOT NULL,
       data_reproducao DATETIME NOT NULL,
       CONSTRAINT PRIMARY KEY(usuario_id, cancao_id),
       FOREIGN KEY(usuario_id) REFERENCES tabela_usuario(usuario_id),
