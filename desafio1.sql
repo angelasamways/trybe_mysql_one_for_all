@@ -100,7 +100,7 @@ CREATE TABLE SpotifyClone.tabela_plano(
     (3, 2),
     (4, 4),
     (5, 5),
-    (5, 3),
+    (5, 6),
     (6, 6),
     (6, 1),
     (7, 6),
@@ -111,9 +111,9 @@ CREATE TABLE SpotifyClone.tabela_plano(
     SpotifyClone.tabela_album (nome_album, artista_id, ano_lancamento)
   VALUES
     ('Renaissance', 1, 2022),
-    ('Jazz', 1, 1978),
-    ('Hot Space', 1, 1982),
-    ('Falso Brilhante', 2, 1998),
+    ('Jazz', 2, 1978),
+    ('Hot Space', 2, 1982),
+    ('Falso Brilhante', 3, 1998),
     ('Vento de Maio', 3, 2001),
     ('QVVJFA?', 4, 2003),
     ('Somewhere Far Beyond', 5, 2007),
